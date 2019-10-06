@@ -1,6 +1,8 @@
 package APITesting.com.org.apiselenium;
 
+import APITesting.com.org.classes.Info;
 import APITesting.com.org.classes.Posts;
+import APITesting.com.org.classes._Posts;
 import com.jayway.restassured.http.ContentType;
 import com.jayway.restassured.response.Response;
 import org.testng.annotations.Test;
@@ -99,5 +101,27 @@ public class JsonServerRequests {
         delete("http://localhost:3000/posts/1");
 
         System.out.println("Deleting responce: " +resp6.asString());
+    }
+
+
+    //Complex POSTS
+    @Test
+    public void test_08() {
+        Info info = new Info();
+        info.setEmail("info@appium-selenium.com");
+        info.setPhone("1234546");
+        info.setAddress("USA");
+
+        _Posts posts = new _Posts();
+        posts.setAuthor("Author");
+        posts.setId("10");
+        posts.setTitle("Title");
+        posts.setInfo(info);
+
+        Response respon =
+        given().when().contentType(ContentType.JSON).
+        body(posts).post("http://localhost:3000/posts");
+
+        System.out.println("Response: " +respon.asString());
     }
 }
