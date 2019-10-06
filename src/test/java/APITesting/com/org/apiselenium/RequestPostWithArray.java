@@ -8,7 +8,7 @@ public class RequestPostWithArray {
     @Test
     public void test_1() {
 
-        private String email;
+       // private String email;
 
     }
 }
