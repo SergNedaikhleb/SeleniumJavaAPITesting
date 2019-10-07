@@ -7,7 +7,7 @@ public class _Posts {
     private String id;
     private String title;
     private String author;
-    private Info info;
+    private Info[] info;
 
     public String getId() {
         return id;
@@ -32,11 +32,11 @@ public class _Posts {
         this.author = author;
     }
 
-    public Info getInfo() {
+    public Info[] getInfo() {
         return info;
     }
 
-    public void setInfo(Info info) {
+    public void setInfo(Info[] info) {
         this.info = info;
     }
 }

@@ -116,7 +116,7 @@ public class JsonServerRequests {
         posts.setAuthor("Author");
         posts.setId("10");
         posts.setTitle("Title");
-        posts.setInfo(info);
+    //    posts.setInfo(info);
 
         Response respon =
         given().when().contentType(ContentType.JSON).
